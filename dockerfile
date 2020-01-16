@@ -1,8 +1,8 @@
-FROM python:3
+FROM python:3.8-alpine
 
-RUN mkdir /code/
-COPY c:\users\jackpickering\projects\bbc_title\requirements.txt requirements.txt /code/
+RUN mkdir /code
+COPY requirements.txt /code/
 RUN pip install -r requirements.txt
-COPY c:\users\jackpickering\projects\bbc_title\bbc_code.py /code/
+COPY bbc_code.py /code/
 CMD ["python", "bbc_code.py"]
 
