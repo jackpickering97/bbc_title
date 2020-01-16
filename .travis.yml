@@ -2,3 +2,6 @@ services:
   - docker
 script:
   - docker image build -t 7526436303/bbc .
+deploy:
+  provider: scripts
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push 7526436303/bbc
